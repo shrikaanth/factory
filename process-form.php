@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             if (file_exists('includes/db.php')) {
                 require_once 'includes/db.php';
-                $stmt = $pdo->prepare('INSERT INTO inquiries (name, email, phone, shoot_type, no_of_days, services, message, submitted_at) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())');
-                $stmt->execute([$name, $email, $phone, $shootType, $no_of_days, $services, $message]);
+                $stmt = $pdo->prepare('INSERT INTO inquiries (name, email, phone, shoot_type, no_of_days, services, message, submitted_at, ip_address) VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), ?)');
+                $stmt->execute([$name, $email, $phone, $shootType, $no_of_days, $services, $message, $_SERVER['REMOTE_ADDR'] ?? 'Unknown']);
                 $saved = true;
             }
         } catch (Exception $e) {
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         file_put_contents($inquiries_file, $inquiry_line, FILE_APPEND | LOCK_EX);
 
         // Send email notification (if mail function is available)
-        $to = 'info@photofactorystudio.com';
+        $to = 'mail.photofactory@gmail.com';
         $subject = 'New Contact Form Submission - Photo Factory Studio';
         $email_body = "New inquiry received:\n\n";
         $email_body .= "Name: $name\n";
