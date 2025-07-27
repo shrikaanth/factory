@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Test - Photo Factory Studio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .test-section {
+            padding: 50px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .test-button {
+            margin: 10px;
+            padding: 10px 20px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">JavaScript Functionality Test</h1>
+        
+        <div class="test-section">
+            <h3>App.js Test</h3>
+            <button class="test-button" onclick="testAppJS()">Test App.js Functions</button>
+            <div id="appTestResult" class="test-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>Contact.js Test</h3>
+            <button class="test-button" onclick="testContactJS()">Test Contact.js Functions</button>
+            <div id="contactTestResult" class="test-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>Pre.js Test</h3>
+            <button class="test-button" onclick="testPreJS()">Test Pre.js Functions</button>
+            <div id="preTestResult" class="test-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>Destination.js Test</h3>
+            <button class="test-button" onclick="testDestinationJS()">Test Destination.js Functions</button>
+            <div id="destinationTestResult" class="test-result"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>Console Log Test</h3>
+            <button class="test-button" onclick="testConsoleLog()">Test Console Logging</button>
+            <div id="consoleTestResult" class="test-result">
+                Check browser console (F12) for detailed logs
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/pre.js"></script>
+    <script src="assets/js/destination.js"></script>
+    
+    <script>
+        function testAppJS() {
+            const result = document.getElementById('appTestResult');
+            try {
+                // Test if functions exist
+                if (typeof initSmoothScrolling === 'function') {
+                    result.innerHTML = '<span style="color: green;">✓ App.js loaded successfully. Functions available.</span>';
+                } else {
+                    result.innerHTML = '<span style="color: red;">✗ App.js functions not found.</span>';
+                }
+            } catch (error) {
+                result.innerHTML = '<span style="color: red;">✗ Error: ' + error.message + '</span>';
+            }
+        }
+        
+        function testContactJS() {
+            const result = document.getElementById('contactTestResult');
+            try {
+                if (typeof initContactForm === 'function') {
+                    result.innerHTML = '<span style="color: green;">✓ Contact.js loaded successfully. Functions available.</span>';
+                } else {
+                    result.innerHTML = '<span style="color: red;">✗ Contact.js functions not found.</span>';
+                }
+            } catch (error) {
+                result.innerHTML = '<span style="color: red;">✗ Error: ' + error.message + '</span>';
+            }
+        }
+        
+        function testPreJS() {
+            const result = document.getElementById('preTestResult');
+            try {
+                if (typeof initFeaturedSlider === 'function') {
+                    result.innerHTML = '<span style="color: green;">✓ Pre.js loaded successfully. Functions available.</span>';
+                } else {
+                    result.innerHTML = '<span style="color: red;">✗ Pre.js functions not found.</span>';
+                }
+            } catch (error) {
+                result.innerHTML = '<span style="color: red;">✗ Error: ' + error.message + '</span>';
+            }
+        }
+        
+        function testDestinationJS() {
+            const result = document.getElementById('destinationTestResult');
+            try {
+                if (typeof initTestimonialCarousel === 'function') {
+                    result.innerHTML = '<span style="color: green;">✓ Destination.js loaded successfully. Functions available.</span>';
+                } else {
+                    result.innerHTML = '<span style="color: red;">✗ Destination.js functions not found.</span>';
+                }
+            } catch (error) {
+                result.innerHTML = '<span style="color: red;">✗ Error: ' + error.message + '</span>';
+            }
+        }
+        
+        function testConsoleLog() {
+            console.log('=== JavaScript Test Results ===');
+            console.log('App.js functions:', {
+                initSmoothScrolling: typeof initSmoothScrolling,
+                initNavbarEffects: typeof initNavbarEffects,
+                initGalleryAnimations: typeof initGalleryAnimations,
+                openPhotoGallery: typeof openPhotoGallery
+            });
+            console.log('Contact.js functions:', {
+                initContactForm: typeof initContactForm,
+                validateForm: typeof validateForm,
+                trackEvent: typeof trackEvent
+            });
+            console.log('Pre.js functions:', {
+                initFeaturedSlider: typeof initFeaturedSlider,
+                initPortfolioFilters: typeof initPortfolioFilters,
+                openLightbox: typeof openLightbox
+            });
+            console.log('Destination.js functions:', {
+                initTestimonialCarousel: typeof initTestimonialCarousel,
+                initGalleryInteractions: typeof initGalleryInteractions,
+                openImageModal: typeof openImageModal
+            });
+            console.log('=== End Test Results ===');
+            
+            document.getElementById('consoleTestResult').innerHTML = 
+                '<span style="color: blue;">✓ Console logs generated. Check browser console (F12) for details.</span>';
+        }
+        
+        // Auto-run tests on page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                testAppJS();
+                testContactJS();
+                testPreJS();
+                testDestinationJS();
+                testConsoleLog();
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 

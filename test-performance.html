@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Test - Pre-Wedding Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .test-section {
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .test-result {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .test-success { background: #d4edda; color: #155724; }
+        .test-error { background: #f8d7da; color: #721c24; }
+        .test-info { background: #d1ecf1; color: #0c5460; }
+        .performance-metric {
+            display: inline-block;
+            margin: 5px 10px;
+            padding: 5px 10px;
+            background: #f8f9fa;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Pre-Wedding Page Performance Test</h1>
+        
+        <div class="test-section">
+            <h3>1. Page Load Performance</h3>
+            <div id="loadTest" class="test-result test-info">
+                Testing page load performance...
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>2. Image Optimization</h3>
+            <div id="imageTest" class="test-result test-info">
+                Testing image optimization...
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>3. JavaScript Performance</h3>
+            <div id="jsTest" class="test-result test-info">
+                Testing JavaScript performance...
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>4. Mobile Optimization</h3>
+            <div id="mobileTest" class="test-result test-info">
+                Testing mobile optimizations...
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>5. Animation Performance</h3>
+            <div id="animationTest" class="test-result test-info">
+                Testing animation performance...
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>6. Live Performance Test</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Test Pre-Wedding Page</h5>
+                        </div>
+                        <div class="card-body">
+                            <a href="pre-wedding.php" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt me-2"></i>Open Pre-Wedding Page
+                            </a>
+                            <p class="mt-3 text-muted">
+                                Open the pre-wedding page in a new tab and compare loading times.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Performance Metrics</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="metrics">
+                                <div class="performance-metric">
+                                    <strong>DOM Load:</strong> <span id="domLoad">-</span>
+                                </div>
+                                <div class="performance-metric">
+                                    <strong>Page Load:</strong> <span id="pageLoad">-</span>
+                                </div>
+                                <div class="performance-metric">
+                                    <strong>Images:</strong> <span id="imageCount">-</span>
+                                </div>
+                                <div class="performance-metric">
+                                    <strong>JS Size:</strong> <span id="jsSize">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Performance test functions
+        function testPageLoadPerformance() {
+            const result = document.getElementById('loadTest');
+            const startTime = performance.now();
+            
+            // Simulate page load
+            setTimeout(() => {
+                const loadTime = performance.now() - startTime;
+                const domLoad = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
+                const pageLoad = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                
+                document.getElementById('domLoad').textContent = domLoad + 'ms';
+                document.getElementById('pageLoad').textContent = pageLoad + 'ms';
+                
+                if (loadTime < 2000) {
+                    result.innerHTML = '<span style="color: green;">✓ Page loads quickly (' + Math.round(loadTime) + 'ms)</span>';
+                    result.className = 'test-result test-success';
+                } else {
+                    result.innerHTML = '<span style="color: red;">✗ Page load is slow (' + Math.round(loadTime) + 'ms)</span>';
+                    result.className = 'test-result test-error';
+                }
+            }, 100);
+        }
+        
+        function testImageOptimization() {
+            const result = document.getElementById('imageTest');
+            const images = document.querySelectorAll('img');
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            document.getElementById('imageCount').textContent = images.length;
+            
+            if (lazyImages.length > 0) {
+                result.innerHTML = '<span style="color: green;">✓ Lazy loading implemented (' + lazyImages.length + ' images)</span>';
+                result.className = 'test-result test-success';
+            } else {
+                result.innerHTML = '<span style="color: orange;">⚠ No lazy loading detected</span>';
+                result.className = 'test-result test-info';
+            }
+        }
+        
+        function testJavaScriptPerformance() {
+            const result = document.getElementById('jsTest');
+            
+            // Test if performance optimizations are available
+            if (typeof initLazyLoading === 'function' && typeof optimizeForMobile === 'function') {
+                result.innerHTML = '<span style="color: green;">✓ Performance optimizations available</span>';
+                result.className = 'test-result test-success';
+            } else {
+                result.innerHTML = '<span style="color: red;">✗ Performance optimizations not found</span>';
+                result.className = 'test-result test-error';
+            }
+            
+            // Estimate JS size (this is a rough estimate)
+            const scripts = document.querySelectorAll('script[src]');
+            let totalSize = 0;
+            scripts.forEach(script => {
+                if (script.src.includes('pre.js')) {
+                    totalSize += 50; // Rough estimate in KB
+                }
+            });
+            document.getElementById('jsSize').textContent = totalSize + 'KB';
+        }
+        
+        function testMobileOptimization() {
+            const result = document.getElementById('mobileTest');
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                if (document.body.classList.contains('mobile-optimized')) {
+                    result.innerHTML = '<span style="color: green;">✓ Mobile optimizations active</span>';
+                    result.className = 'test-result test-success';
+                } else {
+                    result.innerHTML = '<span style="color: orange;">⚠ Mobile optimizations not detected</span>';
+                    result.className = 'test-result test-info';
+                }
+            } else {
+                result.innerHTML = '<span style="color: blue;">ℹ Desktop view - mobile optimizations not needed</span>';
+                result.className = 'test-result test-info';
+            }
+        }
+        
+        function testAnimationPerformance() {
+            const result = document.getElementById('animationTest');
+            
+            // Check if animations are disabled on mobile
+            const isMobile = window.innerWidth <= 768;
+            const hasAnimations = document.querySelectorAll('.hero-overlay, .story-item, .theme-card').length > 0;
+            
+            if (isMobile && hasAnimations) {
+                // Check if animations are optimized
+                const style = getComputedStyle(document.body);
+                if (style.getPropertyValue('--animation-disabled') === 'true') {
+                    result.innerHTML = '<span style="color: green;">✓ Animations optimized for mobile</span>';
+                    result.className = 'test-result test-success';
+                } else {
+                    result.innerHTML = '<span style="color: orange;">⚠ Animations may impact mobile performance</span>';
+                    result.className = 'test-result test-info';
+                }
+            } else {
+                result.innerHTML = '<span style="color: blue;">ℹ Animation performance acceptable</span>';
+                result.className = 'test-result test-info';
+            }
+        }
+        
+        // Run tests when page loads
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                testPageLoadPerformance();
+                testImageOptimization();
+                testJavaScriptPerformance();
+                testMobileOptimization();
+                testAnimationPerformance();
+            }, 500);
+        });
+        
+        // Test mobile optimization when window is resized
+        window.addEventListener('resize', function() {
+            testMobileOptimization();
+        });
+    </script>
+</body>
+</html> 

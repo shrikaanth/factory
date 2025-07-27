@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Test - Photo Factory Studio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .test-section {
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .test-result {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .test-success { background: #d4edda; color: #155724; }
+        .test-error { background: #f8d7da; color: #721c24; }
+        .test-info { background: #d1ecf1; color: #0c5460; }
+        .nav-test-link {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .nav-test-link:hover {
+            background: #0056b3;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Navigation Link Test</h1>
+        
+        <div class="test-section">
+            <h3>1. Main Page Navigation</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Primary Pages</h5>
+                    <a href="index.php" class="nav-test-link" target="_blank">Home Page</a>
+                    <a href="about.php" class="nav-test-link" target="_blank">About Page</a>
+                    <a href="contact.php" class="nav-test-link" target="_blank">Contact Page</a>
+                    <a href="pre-wedding.php" class="nav-test-link" target="_blank">Pre-Wedding Page</a>
+                    <a href="destination-wedding.php" class="nav-test-link" target="_blank">Destination Wedding Page</a>
+                </div>
+                <div class="col-md-6">
+                    <h5>Test Pages</h5>
+                    <a href="test-js.html" class="nav-test-link" target="_blank">JavaScript Test</a>
+                    <a href="test-contact.html" class="nav-test-link" target="_blank">Contact Form Test</a>
+                    <a href="test-performance.html" class="nav-test-link" target="_blank">Performance Test</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>2. Internal Section Links</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Home Page Sections</h5>
+                    <a href="index.php#home" class="nav-test-link" target="_blank">Home Section</a>
+                    <a href="index.php#about" class="nav-test-link" target="_blank">About Section</a>
+                    <a href="index.php#services" class="nav-test-link" target="_blank">Services Section</a>
+                    <a href="index.php#gallery" class="nav-test-link" target="_blank">Gallery Section</a>
+                    <a href="index.php#contact" class="nav-test-link" target="_blank">Contact Section</a>
+                </div>
+                <div class="col-md-6">
+                    <h5>Service Page Sections</h5>
+                    <a href="pre-wedding.php#portfolio" class="nav-test-link" target="_blank">Pre-Wedding Portfolio</a>
+                    <a href="pre-wedding.php#booking" class="nav-test-link" target="_blank">Pre-Wedding Booking</a>
+                    <a href="destination-wedding.php#gallery" class="nav-test-link" target="_blank">Destination Gallery</a>
+                    <a href="destination-wedding.php#booking" class="nav-test-link" target="_blank">Destination Booking</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>3. Service Dropdown Links</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Main Services</h5>
+                    <a href="destination-wedding.php" class="nav-test-link" target="_blank">Destination Wedding</a>
+                    <a href="pre-wedding.php" class="nav-test-link" target="_blank">Pre Wedding</a>
+                </div>
+                <div class="col-md-6">
+                    <h5>Other Services (Home Page Sections)</h5>
+                    <a href="index.php#wedding" class="nav-test-link" target="_blank">Wedding</a>
+                    <a href="index.php#birthday" class="nav-test-link" target="_blank">Birthday</a>
+                    <a href="index.php#maternity" class="nav-test-link" target="_blank">Maternity & Baby Shoot</a>
+                    <a href="index.php#home-inauguration" class="nav-test-link" target="_blank">Home Inauguration</a>
+                    <a href="index.php#interior" class="nav-test-link" target="_blank">Interior Shoot</a>
+                    <a href="index.php#product" class="nav-test-link" target="_blank">Product Shoot</a>
+                    <a href="index.php#aerial" class="nav-test-link" target="_blank">Commercial Aerial Shoot</a>
+                    <a href="index.php#corporate" class="nav-test-link" target="_blank">Corporate Events</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>4. Breadcrumb Navigation</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Breadcrumb Links</h5>
+                    <a href="index.php" class="nav-test-link" target="_blank">Home (Breadcrumb)</a>
+                    <a href="index.php#services" class="nav-test-link" target="_blank">Services (Breadcrumb)</a>
+                </div>
+                <div class="col-md-6">
+                    <h5>Page-Specific Breadcrumbs</h5>
+                    <a href="pre-wedding.php" class="nav-test-link" target="_blank">Pre-Wedding (with breadcrumb)</a>
+                    <a href="destination-wedding.php" class="nav-test-link" target="_blank">Destination Wedding (with breadcrumb)</a>
+                    <a href="contact.php" class="nav-test-link" target="_blank">Contact (with breadcrumb)</a>
+                    <a href="about.php" class="nav-test-link" target="_blank">About (with breadcrumb)</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>5. Footer Links</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Footer Quick Links</h5>
+                    <a href="index.php" class="nav-test-link" target="_blank">Home (Footer)</a>
+                    <a href="about.php" class="nav-test-link" target="_blank">About (Footer)</a>
+                    <a href="index.php#services" class="nav-test-link" target="_blank">Services (Footer)</a>
+                    <a href="index.php#gallery" class="nav-test-link" target="_blank">Gallery (Footer)</a>
+                    <a href="contact.php" class="nav-test-link" target="_blank">Contact (Footer)</a>
+                </div>
+                <div class="col-md-6">
+                    <h5>Social Media Links</h5>
+                    <a href="https://www.instagram.com/photo_factory_studio/?hl=en" class="nav-test-link" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/sandeepchouhanphotography" class="nav-test-link" target="_blank">Facebook</a>
+                    <a href="https://www.youtube.com/@photofactorystudio1911" class="nav-test-link" target="_blank">YouTube</a>
+                    <a href="https://wa.me/919993590196" class="nav-test-link" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>6. Contact Information</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Contact Links</h5>
+                    <a href="tel:+919993590196" class="nav-test-link">Phone: +91 99935-90196</a>
+                    <a href="mailto:mail.photofactory@gmail.com" class="nav-test-link">Email: mail.photofactory@gmail.com</a>
+                </div>
+                <div class="col-md-6">
+                    <h5>Location</h5>
+                    <p class="text-muted">99 B L.N. City, Gandhi Nagar Airport Road, Indore, 453112 Madhya Pradesh</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>7. Navigation Test Results</h3>
+            <div id="testResults" class="test-result test-info">
+                <h5>Test Instructions:</h5>
+                <ol>
+                    <li>Click each link above to test navigation</li>
+                    <li>Verify that pages load correctly</li>
+                    <li>Check that section links scroll to the right place</li>
+                    <li>Ensure breadcrumb navigation works</li>
+                    <li>Test mobile responsiveness</li>
+                </ol>
+                <div class="alert alert-info">
+                    <strong>Note:</strong> All links should open in new tabs for easy testing. 
+                    Close tabs after testing each link to keep organized.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click tracking for navigation tests
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-test-link');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    console.log('Testing navigation to:', this.href);
+                    
+                    // Add visual feedback
+                    this.style.background = '#28a745';
+                    setTimeout(() => {
+                        this.style.background = '#007bff';
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
