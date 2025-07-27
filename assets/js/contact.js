@@ -45,7 +45,7 @@ function initContactForm() {
         }
         
         // Submit form via AJAX
-        fetch('process-form.php', {
+        fetch('process-form-simple.php', {
             method: 'POST',
             body: formData
         })

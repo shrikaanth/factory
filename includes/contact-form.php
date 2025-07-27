@@ -3,8 +3,6 @@
 // Include this file in pages that need the contact form
 // Make sure the parent page includes the required CSS and JS files
 ?>
- <link rel="stylesheet" href="assets/css/styles.css">
- <link rel="stylesheet" href="assets/css/contact.css">
 <noscript><div class="alert alert-warning">JavaScript is required for full form functionality.</div></noscript>
 <form id="contactForm" class="contact-form" method="POST">
     <div class="row">
