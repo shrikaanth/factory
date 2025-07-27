@@ -1,9 +1,9 @@
 <?php
 // Database connection settings
 $host = 'localhost';
-$db   = 'photofactory_studio'; // Local database name
-$user = 'root'; // Default XAMPP user
-$pass = ''; // Default XAMPP password (empty)
+$db   = 'u134758228_pfstudio'; // Local database name
+$user = 'u134758228_pfstudio'; // Default XAMPP user
+$pass = 'Photofactorystudi@2025@#Sandeepsir'; // Default XAMPP password (empty)
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

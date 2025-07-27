@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Photo Factory Studio</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -46,7 +53,7 @@
                     <div class="story-content">
                         <h2 class="font-playfair">Our Story</h2>
                         <p class="story-text">
-                            Founded in 2012, Photo Factory Studio began as a dream shared by two passionate photographers who believed that every moment deserves to be captured with artistry and emotion. What started as a small studio in the heart of Mumbai has grown into one of India's most trusted photography brands.
+                            Founded in 2012, Photo Factory Studio began as a dream shared by two passionate photographers who believed that every moment deserves to be captured with artistry and emotion. What started as a small studio in the heart of Indore has grown into one of India's most trusted photography brands.
                         </p>
                         <p class="story-text">
                             Our journey has been one of constant evolution, learning, and growth. We've had the privilege of documenting thousands of love stories, celebrations, and milestones, each one unique and special in its own way.
@@ -234,14 +241,14 @@
     <section class="team-section">
         <div class="container">
             <div class="team-title fade-in-up">
-                <h2 class="font-playfair">Meet Our Team</h2>
+                <h2 class="font-playfair">Meet Our Founder</h2>
                 <p>The creative minds behind every stunning photograph</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 fade-in-up" style="transition-delay: 0.2s;">
                     <div class="team-member">
                         <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sandeep Chouhan">
+                            <img src="https://ik.imagekit.io/movodevmaz/img/pfs/sandeep%20sir%20photographer.jpeg?updatedAt=1753647671453" alt="Sandeep Chouhan">
                         </div>
                         <h3 class="team-name">Sandeep Chouhan</h3>
                         <div class="team-role">Founder & Lead Photographer</div>
