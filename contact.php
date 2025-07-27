@@ -43,6 +43,34 @@
                             <h2 class="font-playfair">Get In Touch</h2>
                             <p>Ready to capture your special moments? Fill out the form below and we'll get back to you within 24 hours.</p>
                         </div>
+                        
+                        <?php
+                        // Display success message
+                        if (isset($_GET['success'])) {
+                            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Thank you!</strong> Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+                            if (isset($_GET['db_error'])) {
+                                echo '<br><small class="text-muted">Note: There was an issue saving to database, but your message was sent via email.</small>';
+                            }
+                            if (isset($_GET['email_error'])) {
+                                echo '<br><small class="text-muted">Note: There was an issue sending email, but your message was saved to our system.</small>';
+                            }
+                            echo '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                  </div>';
+                        }
+                        
+                        // Display error message
+                        if (isset($_GET['error'])) {
+                            $error = urldecode($_GET['error']);
+                            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <i class="fas fa-exclamation-triangle me-2"></i>
+                                    <strong>Error:</strong> ' . htmlspecialchars($error) . '
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                  </div>';
+                        }
+                        ?>
+                        
                         <?php include('includes/contact-form.php'); ?>
                     </div>
                 </div>

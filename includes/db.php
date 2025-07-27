@@ -1,9 +1,9 @@
 <?php
 // Database connection settings
 $host = 'localhost';
-$db   = 'u134758228_pfstudio'; // Change to your database name
-$user = 'u134758228_pfstudio'; // Change if you have a different DB user
-$pass = 'Photofactorystudio@2025#sandeep';
+$db   = 'photofactory_studio'; // Local database name
+$user = 'root'; // Default XAMPP user
+$pass = ''; // Default XAMPP password (empty)
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -16,5 +16,17 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
-    die('Database connection failed: ' . $e->getMessage());
-} 
+    // If database doesn't exist, try to create it
+    if ($e->getCode() == 1049) {
+        try {
+            $pdo = new PDO("mysql:host=$host;charset=$charset", $user, $pass, $options);
+            $pdo->exec("CREATE DATABASE IF NOT EXISTS `$db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+            $pdo = new PDO($dsn, $user, $pass, $options);
+        } catch (PDOException $e2) {
+            die('Database creation failed: ' . $e2->getMessage());
+        }
+    } else {
+        die('Database connection failed: ' . $e->getMessage());
+    }
+}
+?> 

@@ -24,12 +24,18 @@ function initContactForm() {
         console.log('Form submit event triggered');
         
         if (validateForm()) {
-            submitForm();
+            // Check if JavaScript is enabled and try AJAX first
+            if (window.fetch) {
+                submitFormAjax();
+            } else {
+                // Fallback to regular form submission
+                submitFormRegular();
+            }
         }
     });
     
-    function submitForm() {
-        console.log('Submitting form...');
+    function submitFormAjax() {
+        console.log('Submitting form via AJAX...');
         
         // Show loading state
         submitBtn.disabled = true;
@@ -45,12 +51,18 @@ function initContactForm() {
         }
         
         // Submit form via AJAX
-        fetch('process-form-simple.php', {
+        fetch('process-form.php', {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
         })
         .then(response => {
             console.log('Response received:', response);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
             return response.json();
         })
         .then(data => {
@@ -68,7 +80,8 @@ function initContactForm() {
                     trackEvent('form_submission', {
                         form_type: 'contact',
                         shoot_type: form.shootType.value,
-                        saved_to_db: data.saved_to_db
+                        saved_to_db: data.saved_to_db,
+                        email_sent: data.email_sent
                     });
                 }
                 
@@ -88,13 +101,17 @@ function initContactForm() {
         })
         .catch(error => {
             console.error('Form submission error:', error);
-            handleFormError(error);
-            
-            // Reset button state
-            submitBtn.disabled = false;
-            btnText.style.display = 'inline-flex';
-            btnLoading.style.display = 'none';
+            // Fallback to regular form submission
+            console.log('Falling back to regular form submission...');
+            submitFormRegular();
         });
+    }
+    
+    function submitFormRegular() {
+        console.log('Submitting form via regular submission...');
+        // Remove the preventDefault and let the form submit naturally
+        form.removeEventListener('submit', arguments.callee);
+        form.submit();
     }
     
     function showFormErrors(errors) {

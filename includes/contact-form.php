@@ -4,7 +4,7 @@
 // Make sure the parent page includes the required CSS and JS files
 ?>
 <noscript><div class="alert alert-warning">JavaScript is required for full form functionality.</div></noscript>
-<form id="contactForm" class="contact-form" method="POST">
+<form id="contactForm" class="contact-form" method="POST" action="process-form.php">
     <div class="row">
         <div class="col-md-6 mb-4">
             <div class="form-group">
