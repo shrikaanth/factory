@@ -31,6 +31,7 @@
                     <li><a href="about.php" class="text-light text-decoration-none">About</a></li>
                     <li><a href="index.php#services" class="text-light text-decoration-none">Services</a></li>
                     <li><a href="index.php#gallery" class="text-light text-decoration-none">Gallery</a></li>
+                    <li><a href="index.php#testimonials" class="text-light text-decoration-none">Testimonials</a></li>
                     <li><a href="contact.php" class="text-light text-decoration-none">Contact</a></li>
                 </ul>
             </div>

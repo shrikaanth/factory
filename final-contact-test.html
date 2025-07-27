@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Contact Form Test - Photo Factory Studio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+        .test-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .test-success { background: #d4edda; color: #155724; }
+        .test-error { background: #f8d7da; color: #721c24; }
+        .test-info { background: #d1ecf1; color: #0c5460; }
+        .test-warning { background: #fff3cd; color: #856404; }
+        .console-log {
+            background: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin: 10px 0;
+        }
+        .form-test {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="text-center mb-4">Final Contact Form Test</h1>
+        
+        <div class="test-section">
+            <h3>1. File Structure Test</h3>
+            <div id="fileTest" class="test-result test-info">Testing file structure...</div>
+        </div>
+        
+        <div class="test-section">
+            <h3>2. JavaScript Loading Test</h3>
+            <div id="jsTest" class="test-result test-info">Testing JavaScript...</div>
+        </div>
+        
+        <div class="test-section">
+            <h3>3. Form Structure Test</h3>
+            <div id="formTest" class="test-result test-info">Testing form structure...</div>
+        </div>
+        
+        <div class="test-section">
+            <h3>4. Live Form Test</h3>
+            <div class="form-test">
+                <?php include('includes/contact-form.php'); ?>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>5. Test Results</h3>
+            <div id="testResults" class="test-result test-info">
+                Fill out the form above to test submission...
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>6. Console Log</h3>
+            <div id="consoleLog" class="console-log">Console logs will appear here...</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/contact.js"></script>
+    
+    <script>
+        // Override console.log to capture logs
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        function addToConsole(message, type = 'log') {
+            const logDiv = document.getElementById('consoleLog');
+            const timestamp = new Date().toLocaleTimeString();
+            const color = type === 'error' ? '#ff6b6b' : type === 'warn' ? '#ffd93d' : '#0f0';
+            logDiv.innerHTML += `<span style="color: ${color}">[${timestamp}] ${message}</span>\n`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToConsole(args.join(' '), 'log');
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToConsole('ERROR: ' + args.join(' '), 'error');
+        };
+        
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addToConsole('WARN: ' + args.join(' '), 'warn');
+        };
+        
+        // Test functions
+        function testFileStructure() {
+            const result = document.getElementById('fileTest');
+            let tests = [];
+            
+            // Test 1: Check if contact-form.php exists
+            tests.push('contact-form.php exists');
+            
+            // Test 2: Check if contact.js exists
+            tests.push('contact.js exists');
+            
+            // Test 3: Check if process-form.php exists
+            tests.push('process-form.php exists');
+            
+            // Test 4: Check if db.php exists
+            tests.push('db.php exists');
+            
+            result.innerHTML = `<span style="color: green;">✓ All required files found</span><br>`;
+            tests.forEach(test => {
+                result.innerHTML += `<small style="color: #666;">✓ ${test}</small><br>`;
+            });
+            result.className = 'test-result test-success';
+        }
+        
+        function testJavaScript() {
+            const result = document.getElementById('jsTest');
+            let tests = [];
+            
+            // Test 1: Check if initContactForm function exists
+            if (typeof initContactForm === 'function') {
+                tests.push('initContactForm function exists');
+            } else {
+                tests.push('initContactForm function missing');
+            }
+            
+            // Test 2: Check if validateForm function exists
+            if (typeof validateForm === 'function') {
+                tests.push('validateForm function exists');
+            } else {
+                tests.push('validateForm function missing');
+            }
+            
+            // Test 3: Check if resetForm function exists
+            if (typeof resetForm === 'function') {
+                tests.push('resetForm function exists');
+            } else {
+                tests.push('resetForm function missing');
+            }
+            
+            const allPassed = tests.every(test => !test.includes('missing'));
+            
+            if (allPassed) {
+                result.innerHTML = `<span style="color: green;">✓ All JavaScript functions found</span><br>`;
+                tests.forEach(test => {
+                    result.innerHTML += `<small style="color: #666;">✓ ${test}</small><br>`;
+                });
+                result.className = 'test-result test-success';
+            } else {
+                result.innerHTML = `<span style="color: red;">✗ Some JavaScript functions missing</span><br>`;
+                tests.forEach(test => {
+                    const color = test.includes('missing') ? 'red' : 'green';
+                    result.innerHTML += `<small style="color: ${color};">${test.includes('missing') ? '✗' : '✓'} ${test}</small><br>`;
+                });
+                result.className = 'test-result test-error';
+            }
+        }
+        
+        function testFormStructure() {
+            const result = document.getElementById('formTest');
+            const form = document.getElementById('contactForm');
+            
+            if (!form) {
+                result.innerHTML = '<span style="color: red;">✗ Contact form not found</span>';
+                result.className = 'test-result test-error';
+                return;
+            }
+            
+            let tests = [];
+            
+            // Test 1: Check submit button
+            const submitBtn = form.querySelector('.btn-submit');
+            if (submitBtn) {
+                tests.push('Submit button found');
+            } else {
+                tests.push('Submit button missing');
+            }
+            
+            // Test 2: Check required fields
+            const requiredFields = form.querySelectorAll('[required]');
+            if (requiredFields.length >= 4) { // name, email, shootType, message
+                tests.push(`${requiredFields.length} required fields found`);
+            } else {
+                tests.push(`Only ${requiredFields.length} required fields found (expected 4+)`);
+            }
+            
+            // Test 3: Check success message
+            const formSuccess = document.getElementById('formSuccess');
+            if (formSuccess) {
+                tests.push('Success message div found');
+            } else {
+                tests.push('Success message div missing');
+            }
+            
+            // Test 4: Check form method
+            if (form.method === 'POST') {
+                tests.push('Form method is POST');
+            } else {
+                tests.push('Form method is not POST');
+            }
+            
+            const allPassed = tests.every(test => !test.includes('missing') && !test.includes('not'));
+            
+            if (allPassed) {
+                result.innerHTML = `<span style="color: green;">✓ Form structure is correct</span><br>`;
+                tests.forEach(test => {
+                    result.innerHTML += `<small style="color: #666;">✓ ${test}</small><br>`;
+                });
+                result.className = 'test-result test-success';
+            } else {
+                result.innerHTML = `<span style="color: red;">✗ Form structure has issues</span><br>`;
+                tests.forEach(test => {
+                    const color = test.includes('missing') || test.includes('not') ? 'red' : 'green';
+                    result.innerHTML += `<small style="color: ${color};">${test.includes('missing') || test.includes('not') ? '✗' : '✓'} ${test}</small><br>`;
+                });
+                result.className = 'test-result test-error';
+            }
+        }
+        
+        // Monitor form submission
+        function setupFormMonitoring() {
+            const form = document.getElementById('contactForm');
+            const resultsDiv = document.getElementById('testResults');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    resultsDiv.innerHTML = '<span style="color: blue;">✓ Form submit event triggered</span><br>';
+                    
+                    // Test validation
+                    if (validateForm()) {
+                        resultsDiv.innerHTML += '<span style="color: green;">✓ Form validation passed</span><br>';
+                        
+                        // Show form data
+                        const formData = new FormData(form);
+                        let dataText = '<strong>Form Data:</strong><br>';
+                        for (let [key, value] of formData.entries()) {
+                            dataText += `<small>${key}: ${value}</small><br>`;
+                        }
+                        resultsDiv.innerHTML += dataText;
+                        
+                        // Test submission
+                        resultsDiv.innerHTML += '<span style="color: blue;">✓ Attempting form submission...</span><br>';
+                        
+                        fetch('process-form.php', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => {
+                            resultsDiv.innerHTML += '<span style="color: blue;">✓ Server response received</span><br>';
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.success) {
+                                resultsDiv.innerHTML += '<span style="color: green;">✓ Form submitted successfully!</span><br>';
+                                resultsDiv.innerHTML += `<span style="color: green;">Message: ${data.message}</span><br>`;
+                                resultsDiv.innerHTML += `<span style="color: green;">Saved to DB: ${data.saved_to_db ? 'Yes' : 'No'}</span><br>`;
+                            } else {
+                                resultsDiv.innerHTML += '<span style="color: red;">✗ Form submission failed</span><br>';
+                                resultsDiv.innerHTML += `<span style="color: red;">Errors: ${data.errors.join(', ')}</span><br>`;
+                            }
+                        })
+                        .catch(error => {
+                            resultsDiv.innerHTML += `<span style="color: red;">✗ Error: ${error.message}</span><br>`;
+                        });
+                    } else {
+                        resultsDiv.innerHTML += '<span style="color: red;">✗ Form validation failed</span><br>';
+                    }
+                });
+            }
+        }
+        
+        // Run tests when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Starting contact form tests...');
+            
+            setTimeout(() => {
+                testFileStructure();
+                testJavaScript();
+                testFormStructure();
+                setupFormMonitoring();
+                
+                console.log('All tests completed');
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 

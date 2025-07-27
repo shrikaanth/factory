@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/destination-wedding.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -468,5 +469,6 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/destination.js"></script>
+    <script src="assets/js/contact.js"></script>
 </body>
 </html>
