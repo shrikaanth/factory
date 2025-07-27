@@ -1,25 +1,8 @@
 <?php
-// Required CSS (include in <head> of parent page):
-// - https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css
-// - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
-// - https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap
-// - assets/css/styles.css
-// - (optionally) assets/css/contact.css, assets/css/pre-wedding.css, assets/css/destination-wedding.css
-//
-// Required JS (include before </body> of parent page):
-// - https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js
-// - (optionally) assets/js/contact.js
+// Contact Form Component
+// Include this file in pages that need the contact form
+// Make sure the parent page includes the required CSS and JS files
 ?>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Photo Factory Studio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
-</head>
 
 <noscript><div class="alert alert-warning">JavaScript is required for full form functionality.</div></noscript>
 <form id="contactForm" class="contact-form" method="POST">
@@ -149,6 +132,4 @@
             <i class="fas fa-plus me-2"></i>Send Another Message
         </button>
     </div>
-</div> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/contact.js"></script>
+</div>

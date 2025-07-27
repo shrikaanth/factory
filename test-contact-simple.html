@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Test - Photo Factory Studio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            padding: 20px;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .test-result {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .test-success { background: #d4edda; color: #155724; }
+        .test-error { background: #f8d7da; color: #721c24; }
+        .test-info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="text-center mb-4">Contact Form Test</h1>
+        
+        <div class="test-result test-info" id="testStatus">
+            Testing contact form functionality...
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <?php include('includes/contact-form.php'); ?>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Test Results</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="testResults">
+                            <p class="text-muted">Fill out the form to test submission...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/contact.js"></script>
+    
+    <script>
+        // Test contact form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('testStatus');
+            const resultsDiv = document.getElementById('testResults');
+            
+            // Test 1: Check if form exists
+            const form = document.getElementById('contactForm');
+            if (form) {
+                statusDiv.innerHTML = '<span style="color: green;">✓ Contact form found</span>';
+                statusDiv.className = 'test-result test-success';
+                
+                // Test 2: Check if submit button exists
+                const submitBtn = form.querySelector('.btn-submit');
+                if (submitBtn) {
+                    resultsDiv.innerHTML = '<p style="color: green;">✓ Submit button found</p>';
+                } else {
+                    resultsDiv.innerHTML = '<p style="color: red;">✗ Submit button not found</p>';
+                }
+                
+                // Test 3: Check if required fields exist
+                const requiredFields = form.querySelectorAll('[required]');
+                if (requiredFields.length > 0) {
+                    resultsDiv.innerHTML += `<p style="color: green;">✓ Found ${requiredFields.length} required fields</p>`;
+                } else {
+                    resultsDiv.innerHTML += '<p style="color: red;">✗ No required fields found</p>';
+                }
+                
+                // Test 4: Monitor form submission
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    resultsDiv.innerHTML += '<p style="color: blue;">✓ Form submit event triggered</p>';
+                    
+                    // Test form validation
+                    if (validateForm()) {
+                        resultsDiv.innerHTML += '<p style="color: green;">✓ Form validation passed</p>';
+                        
+                        // Simulate form submission
+                        const formData = new FormData(form);
+                        resultsDiv.innerHTML += '<p style="color: blue;">✓ Form data collected</p>';
+                        
+                        // Show form data
+                        let dataText = '<strong>Form Data:</strong><br>';
+                        for (let [key, value] of formData.entries()) {
+                            dataText += `${key}: ${value}<br>`;
+                        }
+                        resultsDiv.innerHTML += `<p style="font-size: 12px;">${dataText}</p>`;
+                        
+                        // Test actual submission
+                        fetch('process-form.php', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => {
+                            resultsDiv.innerHTML += '<p style="color: blue;">✓ Server response received</p>';
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.success) {
+                                resultsDiv.innerHTML += '<p style="color: green;">✓ Form submitted successfully!</p>';
+                                resultsDiv.innerHTML += `<p style="color: green;">Message: ${data.message}</p>`;
+                            } else {
+                                resultsDiv.innerHTML += '<p style="color: red;">✗ Form submission failed</p>';
+                                resultsDiv.innerHTML += `<p style="color: red;">Errors: ${data.errors.join(', ')}</p>`;
+                            }
+                        })
+                        .catch(error => {
+                            resultsDiv.innerHTML += `<p style="color: red;">✗ Error: ${error.message}</p>`;
+                        });
+                    } else {
+                        resultsDiv.innerHTML += '<p style="color: red;">✗ Form validation failed</p>';
+                    }
+                });
+                
+            } else {
+                statusDiv.innerHTML = '<span style="color: red;">✗ Contact form not found</span>';
+                statusDiv.className = 'test-result test-error';
+            }
+        });
+    </script>
+</body>
+</html> 

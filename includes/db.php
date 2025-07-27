@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db   = 'u134758228_pfstudio'; // Change to your database name
 $user = 'u134758228_pfstudio'; // Change if you have a different DB user
-$pass = 'Photofactorystudio@2025';
+$pass = 'Photofactorystudio@2025#sandeep';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

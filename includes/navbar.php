@@ -1,5 +1,3 @@
-      <link rel="stylesheet" href="assets/css/styles.css">
- 
    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand font-playfair" href="index.php">
@@ -26,14 +24,14 @@
     <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
         <li><a class="dropdown-item" href="destination-wedding.php">Destination Wedding</a></li>
         <li><a class="dropdown-item" href="pre-wedding.php">Pre Wedding</a></li>
-        <li><a class="dropdown-item" href="index.php#wedding">Wedding</a></li>
-        <li><a class="dropdown-item" href="index.php#birthday">Birthday</a></li>
-        <li><a class="dropdown-item" href="index.php#maternity">Maternity & Baby Shoot</a></li>
-        <li><a class="dropdown-item" href="index.php#home-inauguration">Home Inauguration</a></li>
-        <li><a class="dropdown-item" href="index.php#interior">Interior Shoot</a></li>
-        <li><a class="dropdown-item" href="index.php#product">Product Shoot</a></li>
-        <li><a class="dropdown-item" href="index.php#aerial">Commercial Aerial Shoot</a></li>
-        <li><a class="dropdown-item" href="index.php#corporate">Corporate Events</a></li>
+        <li><a class="dropdown-item" href="index.php#services">Wedding</a></li>
+        <li><a class="dropdown-item" href="index.php#services">Birthday</a></li>
+        <li><a class="dropdown-item" href="index.php#services">Maternity & Baby Shoot</a></li>
+        <li><a class="dropdown-item" href="index.php#services">Home Inauguration</a></li>
+        <li><a class="dropdown-item" href="index.php#services">Interior Shoot</a></li>
+        <li><a class="dropdown-item" href="index.php#services">Product Shoot</a></li>
+        <li><a class="dropdown-item" href="index.php#services">Commercial Aerial Shoot</a></li>
+        <li><a class="dropdown-item" href="index.php#services">Corporate Events</a></li>
     </ul>
 </li>
 

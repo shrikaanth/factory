@@ -241,12 +241,12 @@
                 <div class="col-lg-4 col-md-6 fade-in-up" style="transition-delay: 0.2s;">
                     <div class="team-member">
                         <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sneha Patel">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sandeep Chouhan">
                         </div>
                         <h3 class="team-name">Sandeep Chouhan</h3>
-                        <div class="team-role">Founder</div>
+                        <div class="team-role">Founder & Lead Photographer</div>
                         <p class="team-description">
-                         With 13 years of experience, Rahul specializes in wedding photography and has captured over 500+ weddings across India and abroad.
+                         With 13 years of experience, Sandeep specializes in wedding photography and has captured over 500+ weddings across India and abroad.
                         </p>
                     </div>
                 </div>
@@ -261,10 +261,10 @@
                 <h2 class="font-playfair">Ready to Create Magic Together?</h2>
                 <p>Let's discuss your photography needs and create something beautiful that you'll treasure forever.</p>
                 <div class="cta-buttons">
-                    <a href="index.html#contact" class="btn-cta-primary">
+                    <a href="contact.php" class="btn-cta-primary">
                         <i class="fas fa-calendar me-2"></i>Book a Consultation
                     </a>
-                    <a href="index.html#gallery" class="btn-cta-outline">
+                    <a href="index.php#gallery" class="btn-cta-outline">
                         <i class="fas fa-images me-2"></i>View Our Work
                     </a>
                 </div>

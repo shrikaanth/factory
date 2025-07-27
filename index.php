@@ -149,10 +149,11 @@
                         </div>
                         <h4>Destination Wedding</h4>
                         <p>Capture your dream wedding in the most beautiful locations around the world with our expert destination wedding photography.</p>
-                    <div> <a href="destination-wedding.php"> <button class="btn btn-primary-custom" onclick="scrollToSection('contact')">
-                    <i class="fas fa-calendar me-2"></i>Explore Now!
-                </button></a>
-               </div>
+                    <div>
+                        <a href="destination-wedding.php" class="btn btn-primary-custom">
+                            <i class="fas fa-calendar me-2"></i>Explore Now!
+                        </a>
+                    </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -162,10 +163,11 @@
                         </div>
                         <h4>Pre Wedding</h4>
                         <p>Romantic and creative pre-wedding shoots that tell your unique love story in the most beautiful way.</p>
-                    <div> <a href="pre-wedding.php"> <button class="btn btn-primary-custom" onclick="scrollToSection('contact')">
-                    <i class="fas fa-calendar me-2"></i>Explore Now!
-                </button></a>
-               </div>
+                    <div>
+                        <a href="pre-wedding.php" class="btn btn-primary-custom">
+                            <i class="fas fa-calendar me-2"></i>Explore Now!
+                        </a>
+                    </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -175,6 +177,11 @@
                         </div>
                         <h4>Wedding</h4>
                         <p>Complete wedding photography coverage for your special day, capturing every precious moment and emotion.</p>
+                        <div>
+                            <a href="contact.php" class="btn btn-primary-custom">
+                                <i class="fas fa-calendar me-2"></i>Book Now!
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -184,6 +191,11 @@
                         </div>
                         <h4>Birthday</h4>
                         <p>Celebrate life's milestones with vibrant and joyful photography that captures the essence of your special day.</p>
+                        <div>
+                            <a href="contact.php" class="btn btn-primary-custom">
+                                <i class="fas fa-calendar me-2"></i>Book Now!
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -193,6 +205,11 @@
                         </div>
                         <h4>Maternity & Baby Shoot</h4>
                         <p>Tender moments of motherhood and precious newborn memories captured with care and artistic vision.</p>
+                        <div>
+                            <a href="contact.php" class="btn btn-primary-custom">
+                                <i class="fas fa-calendar me-2"></i>Book Now!
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -202,6 +219,11 @@
                         </div>
                         <h4>Home Inauguration</h4>
                         <p>Document the beginning of your new chapter with beautiful home photography that captures this milestone.</p>
+                        <div>
+                            <a href="contact.php" class="btn btn-primary-custom">
+                                <i class="fas fa-calendar me-2"></i>Book Now!
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -211,6 +233,11 @@
                         </div>
                         <h4>Interior Shoot</h4>
                         <p>Showcase your space with professional interior photography that highlights design and ambiance.</p>
+                        <div>
+                            <a href="contact.php" class="btn btn-primary-custom">
+                                <i class="fas fa-calendar me-2"></i>Book Now!
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -220,6 +247,11 @@
                         </div>
                         <h4>Product Shoot</h4>
                         <p>High-quality product photography for your business needs, showcasing your products in the best light.</p>
+                        <div>
+                            <a href="contact.php" class="btn btn-primary-custom">
+                                <i class="fas fa-calendar me-2"></i>Book Now!
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -229,6 +261,11 @@
                         </div>
                         <h4>Commercial Aerial Shoot</h4>
                         <p>Stunning aerial photography for real estate and commercial properties using advanced drone technology.</p>
+                        <div>
+                            <a href="contact.php" class="btn btn-primary-custom">
+                                <i class="fas fa-calendar me-2"></i>Book Now!
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -772,5 +809,6 @@ function initLazyLoading() {
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/contact.js"></script>
 </body>
 </html>

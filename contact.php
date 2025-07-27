@@ -65,7 +65,7 @@
                             </div>
                             <div class="contact-content">
                                 <h5>Location</h5>
-                                <p>123 Photography Street<br>Bandra West, Mumbai 400050<br>Maharashtra, India</p>
+                                <p>99 B L.N. City, Gandhi Nagar Airport Road<br>Indore, 453112<br>Madhya Pradesh, India</p>
                             </div>
                         </div>
                         
@@ -75,8 +75,7 @@
                             </div>
                             <div class="contact-content">
                                 <h5>Phone</h5>
-                                <p><a href="tel:+911234567890">+91 12345 67890</a><br>
-                                   <a href="tel:+919876543210">+91 98765 43210</a></p>
+                                <p><a href="tel:+919993590196">+91 99935-90196</a></p>
                             </div>
                         </div>
                         
@@ -86,8 +85,7 @@
                             </div>
                             <div class="contact-content">
                                 <h5>Email</h5>
-                                <p><a href="mailto:info@photofactorystudio.com">info@photofactorystudio.com</a><br>
-                                   <a href="mailto:bookings@photofactorystudio.com">bookings@photofactorystudio.com</a></p>
+                                <p><a href="mailto:mail.photofactory@gmail.com">mail.photofactory@gmail.com</a></p>
                             </div>
                         </div>
                         
@@ -109,7 +107,7 @@
                     <div class="map-container">
                         <div class="map-wrapper">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.8267739870834!2d72.82682731490213!3d19.05993998710068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9b5b2b2b2b2%3A0x1234567890abcdef!2sBandra%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.1234567890123!2d75.12345678901234!3d22.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962c1234567890%3A0x1234567890abcdef!2sGandhi%20Nagar%20Airport%20Road%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                                 width="100%" 
                                 height="450" 
                                 style="border:0;" 
@@ -121,8 +119,8 @@
                         <div class="map-overlay">
                             <div class="map-info">
                                 <h4 class="font-playfair">Photo Factory Studio</h4>
-                                <p><i class="fas fa-map-marker-alt me-2"></i>Bandra West, Mumbai</p>
-                                <a href="https://maps.google.com/?q=Bandra+West+Mumbai" target="_blank" class="btn-directions">
+                                <p><i class="fas fa-map-marker-alt me-2"></i>Gandhi Nagar Airport Road, Indore</p>
+                                <a href="https://maps.google.com/?q=Gandhi+Nagar+Airport+Road+Indore+Madhya+Pradesh" target="_blank" class="btn-directions">
                                     <i class="fas fa-directions me-2"></i>Get Directions
                                 </a>
                             </div>
@@ -144,7 +142,7 @@
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <div class="quick-contact-buttons">
-                            <a href="tel:+911234567890" class="btn-quick-contact">
+                            <a href="tel:+919993590196" class="btn-quick-contact">
                                 <i class="fas fa-phone"></i>
                                 <span>Call Now</span>
                             </a>
