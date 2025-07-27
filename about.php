@@ -241,14 +241,14 @@
     <section class="team-section">
         <div class="container">
             <div class="team-title fade-in-up">
-                <h2 class="font-playfair">Meet Our Team</h2>
+                <h2 class="font-playfair">Meet Our Founder</h2>
                 <p>The creative minds behind every stunning photograph</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 fade-in-up" style="transition-delay: 0.2s;">
                     <div class="team-member">
                         <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sandeep Chouhan">
+                            <img src="https://ik.imagekit.io/movodevmaz/img/pfs/sandeep%20sir%20photographer.jpeg?updatedAt=1753647671453" alt="Sandeep Chouhan">
                         </div>
                         <h3 class="team-name">Sandeep Chouhan</h3>
                         <div class="team-role">Founder & Lead Photographer</div>
