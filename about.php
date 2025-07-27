@@ -53,7 +53,7 @@
                     <div class="story-content">
                         <h2 class="font-playfair">Our Story</h2>
                         <p class="story-text">
-                            Founded in 2012, Photo Factory Studio began as a dream shared by two passionate photographers who believed that every moment deserves to be captured with artistry and emotion. What started as a small studio in the heart of Mumbai has grown into one of India's most trusted photography brands.
+                            Founded in 2012, Photo Factory Studio began as a dream shared by two passionate photographers who believed that every moment deserves to be captured with artistry and emotion. What started as a small studio in the heart of Indore has grown into one of India's most trusted photography brands.
                         </p>
                         <p class="story-text">
                             Our journey has been one of constant evolution, learning, and growth. We've had the privilege of documenting thousands of love stories, celebrations, and milestones, each one unique and special in its own way.
