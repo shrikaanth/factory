@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Contact Form Test - Photo Factory Studio</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/contact.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: #f8f9fa;
+        }
+        .test-header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .test-info {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .test-info h3 {
+            color: #c9a96e;
+            margin-bottom: 15px;
+        }
+        .test-info ul {
+            margin-bottom: 0;
+        }
+        .test-info li {
+            margin-bottom: 8px;
+        }
+        .mobile-test-info {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-header">
+        <div class="container">
+            <h1><i class="fas fa-mobile-alt me-3"></i>Mobile Contact Form Test</h1>
+            <p>Testing contact form visibility and functionality on mobile devices</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="test-info">
+            <h3><i class="fas fa-info-circle me-2"></i>Test Instructions</h3>
+            <ul>
+                <li><strong>Desktop:</strong> Open browser dev tools and switch to mobile view</li>
+                <li><strong>Mobile:</strong> Open this page directly on your mobile device</li>
+                <li><strong>Test:</strong> Scroll down to the contact section and verify form visibility</li>
+                <li><strong>Check:</strong> All form fields should be clearly visible and accessible</li>
+            </ul>
+        </div>
+
+        <div class="mobile-test-info">
+            <h4><i class="fas fa-exclamation-triangle me-2"></i>Mobile Testing Tips</h4>
+            <p><strong>If the form is not visible:</strong></p>
+            <ul>
+                <li>Check if you're in mobile view (responsive design mode)</li>
+                <li>Try different screen sizes (320px, 375px, 768px)</li>
+                <li>Refresh the page after switching to mobile view</li>
+                <li>Check browser console for any JavaScript errors</li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="test-info">
+                    <h3><i class="fas fa-link me-2"></i>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.php" target="_blank">Main Index Page</a></li>
+                        <li><a href="contact.php" target="_blank">Contact Page</a></li>
+                        <li><a href="test-contact-form.php" target="_blank">Contact Form Test</a></li>
+                        <li><a href="admin/inquiries.php" target="_blank">Admin Panel</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="test-info">
+                    <h3><i class="fas fa-tools me-2"></i>Debug Info</h3>
+                    <ul>
+                        <li><strong>Screen Width:</strong> <span id="screenWidth"></span></li>
+                        <li><strong>Viewport Width:</strong> <span id="viewportWidth"></span></li>
+                        <li><strong>User Agent:</strong> <span id="userAgent"></span></li>
+                        <li><strong>CSS Loaded:</strong> <span id="cssLoaded">Checking...</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section Test -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form-wrapper fade-in-up">
+                        <div class="form-header text-center mb-5">
+                            <h2 class="font-playfair">Mobile Contact Form Test</h2>
+                            <p>This is a test of the contact form visibility on mobile devices. All form elements should be clearly visible below.</p>
+                        </div>
+                        
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <strong>Test Form:</strong> This form should be fully visible on mobile devices. If you can see this message and the form below, the mobile styling is working correctly.
+                        </div>
+                        
+                        <?php include('includes/contact-form.php'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mt-5">
+        <div class="test-info">
+            <h3><i class="fas fa-check-circle me-2"></i>Test Results</h3>
+            <div id="testResults">
+                <p><strong>Form Visibility Test:</strong></p>
+                <ul>
+                    <li id="formVisible">Checking form visibility...</li>
+                    <li id="formFields">Checking form fields...</li>
+                    <li id="mobileStyles">Checking mobile styles...</li>
+                    <li id="responsiveTest">Checking responsive design...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/contact.js"></script>
+    
+    <script>
+        // Debug information
+        document.getElementById('screenWidth').textContent = screen.width + 'px';
+        document.getElementById('viewportWidth').textContent = window.innerWidth + 'px';
+        document.getElementById('userAgent').textContent = navigator.userAgent.substring(0, 50) + '...';
+        
+        // Check if CSS is loaded
+        function checkCSSLoaded() {
+            const contactSection = document.querySelector('.contact-section');
+            if (contactSection) {
+                const styles = window.getComputedStyle(contactSection);
+                if (styles.padding !== '0px') {
+                    document.getElementById('cssLoaded').textContent = '✅ Loaded';
+                    document.getElementById('cssLoaded').style.color = 'green';
+                } else {
+                    document.getElementById('cssLoaded').textContent = '❌ Not Loaded';
+                    document.getElementById('cssLoaded').style.color = 'red';
+                }
+            }
+        }
+        
+        // Test form visibility
+        function testFormVisibility() {
+            const form = document.querySelector('.contact-form');
+            const formWrapper = document.querySelector('.contact-form-wrapper');
+            
+            if (form && formWrapper) {
+                const formStyles = window.getComputedStyle(form);
+                const wrapperStyles = window.getComputedStyle(formWrapper);
+                
+                if (formStyles.display !== 'none' && wrapperStyles.display !== 'none') {
+                    document.getElementById('formVisible').innerHTML = '✅ Form is visible';
+                    document.getElementById('formVisible').style.color = 'green';
+                } else {
+                    document.getElementById('formVisible').innerHTML = '❌ Form is hidden';
+                    document.getElementById('formVisible').style.color = 'red';
+                }
+                
+                // Check form fields
+                const formFields = form.querySelectorAll('input, textarea, select');
+                if (formFields.length > 0) {
+                    document.getElementById('formFields').innerHTML = `✅ Found ${formFields.length} form fields`;
+                    document.getElementById('formFields').style.color = 'green';
+                } else {
+                    document.getElementById('formFields').innerHTML = '❌ No form fields found';
+                    document.getElementById('formFields').style.color = 'red';
+                }
+                
+                // Check mobile styles
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile) {
+                    document.getElementById('mobileStyles').innerHTML = '✅ Mobile view detected';
+                    document.getElementById('mobileStyles').style.color = 'green';
+                } else {
+                    document.getElementById('mobileStyles').innerHTML = 'ℹ️ Desktop view detected';
+                    document.getElementById('mobileStyles').style.color = 'blue';
+                }
+                
+                // Check responsive design
+                const contactSection = document.querySelector('.contact-section');
+                if (contactSection) {
+                    const sectionStyles = window.getComputedStyle(contactSection);
+                    if (sectionStyles.padding !== '0px') {
+                        document.getElementById('responsiveTest').innerHTML = '✅ Responsive styles applied';
+                        document.getElementById('responsiveTest').style.color = 'green';
+                    } else {
+                        document.getElementById('responsiveTest').innerHTML = '❌ Responsive styles not applied';
+                        document.getElementById('responsiveTest').style.color = 'red';
+                    }
+                }
+            }
+        }
+        
+        // Run tests when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(checkCSSLoaded, 100);
+            setTimeout(testFormVisibility, 200);
+        });
+        
+        // Run tests on window resize
+        window.addEventListener('resize', function() {
+            document.getElementById('viewportWidth').textContent = window.innerWidth + 'px';
+            setTimeout(testFormVisibility, 100);
+        });
+    </script>
+</body>
+</html> 
