@@ -1174,15 +1174,33 @@ a:focus {
     padding: 50px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(201, 169, 110, 0.2);
+    position: relative;
+    z-index: 3;
 }
 
-/* Ensure form elements are properly styled */
+/* Ensure form is always visible */
 .contact-section .contact-form {
     width: 100%;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.contact-section .contact-form .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.contact-section .contact-form .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 10px;
 }
 
 .contact-section .form-group {
     margin-bottom: 20px;
+    display: block;
 }
 
 .contact-section .form-label {
@@ -1237,6 +1255,8 @@ a:focus {
 
 .contact-section .form-check {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .contact-section .form-check-input {
@@ -1248,6 +1268,7 @@ a:focus {
     font-size: 0.9rem;
     color: var(--text-dark);
     cursor: pointer;
+    margin-bottom: 0;
 }
 
 .contact-section .btn-submit {
@@ -1335,6 +1356,8 @@ a:focus {
     margin-bottom: 0;
 }
 
+
+
 /* Mobile Responsive for Contact Section */
 @media (max-width: 768px) {
     .contact-section {
@@ -1344,6 +1367,11 @@ a:focus {
     .contact-section .contact-form-wrapper {
         padding: 40px 30px;
         margin: 0 15px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(201, 169, 110, 0.2);
     }
     
     .contact-section .form-header h2 {
@@ -1353,42 +1381,82 @@ a:focus {
     /* Contact Form Mobile Improvements */
     .contact-section .contact-form {
         padding: 0;
+        width: 100%;
+        display: block;
     }
     
     .contact-section .contact-form .row {
         margin: 0;
+        display: flex;
+        flex-wrap: wrap;
     }
     
     .contact-section .contact-form .col-md-6 {
         padding: 0 10px;
+        width: 100%;
+        margin-bottom: 20px;
     }
     
     .contact-section .form-group {
         margin-bottom: 20px;
+        display: block;
     }
     
     .contact-section .form-control {
         font-size: 16px; /* Prevents zoom on iOS */
         padding: 12px 15px;
+        width: 100%;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+    
+    .contact-section .form-control:focus {
+        border-color: var(--accent-color);
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(201, 169, 110, 0.25);
     }
     
     .contact-section .btn-submit {
         width: 100%;
         padding: 15px 30px;
         font-size: 1rem;
+        display: block;
     }
     
     /* Services checkboxes mobile layout */
     .contact-section .form-check {
         margin-bottom: 10px;
+        display: flex;
+        align-items: center;
     }
     
     .contact-section .form-check-input {
         margin-right: 8px;
+        margin-top: 0;
     }
     
     .contact-section .form-check-label {
         font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+    
+    /* Ensure form labels are visible */
+    .contact-section .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+    }
+    
+    /* Ensure textarea is visible */
+    .contact-section textarea.form-control {
+        min-height: 120px;
+        resize: vertical;
+        display: block;
+        width: 100%;
     }
 }
 
@@ -1400,6 +1468,11 @@ a:focus {
     .contact-section .contact-form-wrapper {
         padding: 25px 15px;
         margin: 0 10px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(201, 169, 110, 0.2);
     }
     
     .contact-section .form-header h2 {
@@ -1411,42 +1484,89 @@ a:focus {
     }
     
     /* Contact Form Small Mobile Improvements */
+    .contact-section .contact-form {
+        width: 100%;
+        display: block;
+    }
+    
+    .contact-section .contact-form .row {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
     .contact-section .contact-form .col-md-6 {
         padding: 0 5px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .contact-section .form-group {
+        margin-bottom: 15px;
+        display: block;
     }
     
     .contact-section .form-control {
         padding: 10px 12px;
         font-size: 16px;
+        width: 100%;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+    
+    .contact-section .form-control:focus {
+        border-color: var(--accent-color);
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(201, 169, 110, 0.25);
     }
     
     .contact-section textarea.form-control {
         min-height: 120px;
+        resize: vertical;
+        display: block;
+        width: 100%;
     }
     
     .contact-section .btn-submit {
         padding: 12px 25px;
         font-size: 0.95rem;
+        width: 100%;
+        display: block;
     }
     
     /* Better spacing for form elements */
     .contact-section .form-label {
         font-size: 0.9rem;
         margin-bottom: 8px;
+        display: block;
+        font-weight: 500;
+        color: var(--text-dark);
     }
     
     .contact-section .form-label i {
         font-size: 0.8rem;
+        margin-right: 8px;
+        color: var(--accent-color);
     }
     
     /* Services section mobile optimization */
     .contact-section .form-check {
         margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .contact-section .form-check-input {
+        margin-right: 8px;
+        margin-top: 0;
     }
     
     .contact-section .form-check-label {
         font-size: 0.85rem;
         line-height: 1.3;
+        margin-bottom: 0;
     }
     
     /* Success message mobile */
@@ -1467,41 +1587,42 @@ a:focus {
     .contact-section .contact-form-wrapper {
         padding: 20px 10px;
         margin: 0 5px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(201, 169, 110, 0.2);
     }
     
     .contact-section .form-header h2 {
         font-size: 1.8rem;
     }
     
+    .contact-section .contact-form {
+        width: 100%;
+        display: block;
+    }
+    
     .contact-section .contact-form .row {
         margin: 0 -5px;
+        display: flex;
+        flex-wrap: wrap;
     }
     
     .contact-section .contact-form .col-md-6 {
         padding: 0 5px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .contact-section .form-group {
+        margin-bottom: 15px;
+        display: block;
     }
     
     .contact-section .form-control {
         padding: 8px 10px;
-    }
-    
-    .contact-section .btn-submit {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    /* Ensure form elements are visible */
-    .contact-section .form-group {
-        margin-bottom: 15px;
-    }
-    
-    .contact-section .form-label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: 500;
-    }
-    
-    .contact-section .form-control {
+        font-size: 16px;
         display: block;
         width: 100%;
         border: 1px solid #ddd;
@@ -1511,10 +1632,13 @@ a:focus {
     
     .contact-section .form-control:focus {
         border-color: var(--accent-color);
+        outline: 0;
         box-shadow: 0 0 0 0.2rem rgba(201, 169, 110, 0.25);
     }
     
     .contact-section .btn-submit {
+        padding: 10px 20px;
+        font-size: 0.9rem;
         display: block;
         width: 100%;
         background: var(--gradient-gold);
@@ -1530,5 +1654,45 @@ a:focus {
     .contact-section .btn-submit:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 25px rgba(201, 169, 110, 0.4);
+    }
+    
+    /* Ensure form labels are visible */
+    .contact-section .form-label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: var(--text-dark);
+        font-size: 0.9rem;
+    }
+    
+    .contact-section .form-label i {
+        margin-right: 8px;
+        color: var(--accent-color);
+    }
+    
+    /* Ensure textarea is visible */
+    .contact-section textarea.form-control {
+        min-height: 120px;
+        resize: vertical;
+        display: block;
+        width: 100%;
+    }
+    
+    /* Services checkboxes */
+    .contact-section .form-check {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .contact-section .form-check-input {
+        margin-right: 8px;
+        margin-top: 0;
+    }
+    
+    .contact-section .form-check-label {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        margin-bottom: 0;
     }
 }
